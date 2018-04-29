@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "Gorevler";
+}
+
+@model IEnumerable<Entity.EntityFramework.Gorev>
+
+
+
+<section class="panel">
+    <header class="panel-heading">
+        Gorev Page
+    </header>
+    <br />
+   
+    <div class="panel-body">
+        <div class="adv-table editable-table ">
+            <div class="clearfix">
+                <div class="btn-group">
+                    <a href="/Gorev/GorevEkle/@Model.FirstOrDefault(x=>x.ProjeID==x.Proje.ProjeID).ProjeID" class="btn btn-success">
+                         New Task <i class="icon-plus"></i>
+                    </a>
+                   
+                </div>
+
+            </div>
+            <div class="space15"></div>
+            <br />
+            <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                <thead>
+                    <tr>
+                        <th>Gorev Adı</th>
+                        <th>GorevDurum</th>
+
+
+                        <th>Oluşturan</th>
+                        <th>OlusturmaTarih</th>
+                        <th>BitisTarih</th>
+                        <th>AtananKisi</th>
+                        <th>Detay</th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var gorev in Model)
+                    {
+                        <tr class="">
+                            <td>@gorev.GorevAdi</td>
+                            <td>@gorev.GorevDurum</td>
+                            <td>@gorev.Olusturan</td>
+                            <td>@gorev.OlusturmaTarih</td>
+                            <td>@gorev.BitisTarih</td>
+                            <td>@gorev.AtananKisi</td>
+                            <td><a class="edit" href="/Gorev/GorevDetay/@gorev.GorevID"><i class="icon-pencil">Detay</i></a></td>
+
+
+
+                        </tr>
+                    }
+
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+

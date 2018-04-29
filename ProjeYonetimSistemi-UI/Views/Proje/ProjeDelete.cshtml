@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "ProjeDelete";
+}
+
+@model Entity.EntityFramework.Proje
+
+
+
+
+
+<section class="panel">
+    <header class="panel-heading">
+        
+    </header>
+    <br />
+    <div class="panel-body">
+
+        <div class="adv-table editable-table ">
+            <div class="clearfix">
+
+
+            </div>
+            <div class="space15"></div>
+            <br />
+
+            <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                <thead>
+                    <tr>
+                        <th>Proje Adi</th>
+                        <th>Açıklama</th>
+
+                       
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="">
+                        <td>@Model.ProjeAdi</td>
+                        <td>@Model.Aciklama</td>
+                      
+
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <div class="form-group">
+              
+                @using (@Html.BeginForm())
+                {
+                    <input type="submit" class="btn btn-danger btn-lg" value="Yes" />
+                }
+                @Html.ActionLink("No", "ProjeDelete", "Proje", null, new { @class = "btn btn-success btn-lg" })
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
